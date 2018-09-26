@@ -1,0 +1,6 @@
+---
+# omapi synchronization port
+isc_dhcp_server_omapi_port: 7911                                                
+                                                                                
+# subnet configuration
+isc_dhcp_server_subnet: []                                                      
