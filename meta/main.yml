@@ -5,7 +5,7 @@ dependencies: []
 galaxy_info:
   role_name: 'isc_dhcp_server'
   author: 'Adfinis SyGroup AG'
-  description: ''
+  description: 'Setup and manage ISC DHCP Server'
   company: 'Adfinis SyGroup AG'
   license: 'GNU General Public License v3'
   min_ansible_version: '2.0.0'
@@ -25,4 +25,5 @@ galaxy_info:
         - 7
   galaxy_tags:
     - dhcp
+    - dhcpd
     - isc-dhcp-server
