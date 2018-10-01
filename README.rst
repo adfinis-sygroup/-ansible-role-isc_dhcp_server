@@ -58,11 +58,11 @@ necessary:
 
 .. code-block:: yaml
 
-# isc_dhcp_server related packages
-isc_dhcp_server_pkg: dhcp
-
-# isc_dhcp_server daemon
-isc_dhcp_server_service: dhcpd
+  # isc_dhcp_server related packages
+  isc_dhcp_server_pkg: dhcp
+  
+  # isc_dhcp_server daemon
+  isc_dhcp_server_service: dhcpd
 
 
 Dependencies
