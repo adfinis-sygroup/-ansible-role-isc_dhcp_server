@@ -11,40 +11,71 @@ ROLE isc_dhcp_server
 .. image:: https://img.shields.io/badge/galaxy-adfinis--sygroup.isc_dhcp_server-660198.svg?style=flat-square
   :target: https://galaxy.ansible.com/adfinis-sygroup/isc_dhcp_server
 
-A brief description of the role goes here.
+This role configures and manages the ISC DHCP server.
 
 
 Requirements
 =============
 
-Any pre-requisites that may not be covered by Ansible itself or the role
-should be mentioned here. For instance, if the role uses the EC2 module, it
-may be a good idea to mention in this section that the boto package is required.
+This role has no additional requirements.
 
 
 Role Variables
 ===============
 
-A description of the settable variables for this role should go here, including
-any variables that are in defaults/main.yml, vars/main.yml, and any variables
-that can/should be set via parameters to the role. Any variables that are read
-from other roles and/or the global scope (ie. hostvars, group vars, etc.)
-should be mentioned here as well.
+The following defaults variables can be configured:
+
+.. code-block:: yaml
+
+  # OMAPI synchronization port
+  isc_dhcp_server_omapi_port: 7911
+  
+  # DHCP server subnet configuration. Default is not to configure any subnets.
+  isc_dhcp_server_subnet:
+    - netaddress: 192.168.121.0
+      netmask: 255.255.255.0
+      gateway: 192.168.121.1
+      domain: lab.local
+      domain_search: lab.local
+      dns: 192.168.121.1
+      range: 192.168.121.20 192.168.121.100
+
+
+The following vars variables are set for Debian / Ubuntu and can be overwritten
+if necessary:
+
+.. code-block:: yaml
+
+  # isc_dhcp_server related packages
+  isc_dhcp_server_pkg: isc-dhcp-server
+  
+  # isc_dhcp_server daemon
+  isc_dhcp_server_service: isc-dhcp-server
+
+
+The following vars variables are set for RHEL / CentOS and can be overwritten if
+necessary:
+
+.. code-block:: yaml
+
+  # isc_dhcp_server related packages
+  isc_dhcp_server_pkg: dhcp
+  
+  # isc_dhcp_server daemon
+  isc_dhcp_server_service: dhcpd
 
 
 Dependencies
 =============
 
-A list of other roles hosted on Galaxy should go here, plus any details in
-regards to parameters that may need to be set for other roles, or variables
-that are used from other roles.
+This role has no additional dependencies.
 
 
 Example Playbook
 =================
 
-Including an example of how to use your role (for instance, with variables
-passed in as parameters) is always nice for users too:
+Below example shows how the role can be integrated into a playbook using
+external vars:
 
 .. code-block:: yaml
 
