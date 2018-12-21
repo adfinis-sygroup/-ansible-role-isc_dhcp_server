@@ -26,4 +26,5 @@ galaxy_info:
   galaxy_tags:
     - dhcp
     - dhcpd
-    - isc-dhcp-server
+    - isc
+    - server
