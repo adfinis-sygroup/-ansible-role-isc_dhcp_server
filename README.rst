@@ -34,7 +34,7 @@ The following defaults variables can be configured:
   isc_dhcp_server_subnet:
     - netaddress: 192.168.121.0
       netmask: 255.255.255.0
-      gateway: 192.168.121.1
+      routers: 192.168.121.1
       domain: lab.local
       domain_search: lab.local
       dns: 192.168.121.1
